@@ -1,0 +1,5 @@
+@use "base/values";
+
+.copyright-notice {
+  color: rgba(values.$black, 0.2);
+}

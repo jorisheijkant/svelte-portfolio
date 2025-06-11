@@ -1,0 +1,45 @@
+@mixin respond-from($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin respond-until($max) {
+  @media (max-width: $max - 1) {
+    @content;
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max - 1) {
+    @content;
+  }
+}
+
+@mixin wh($width, $height: none) {
+  width: $width;
+
+  @if ($height == none) {
+    height: $width;
+  } @else {
+    height: $height;
+  }
+}
+
+@mixin flex-center($direction: column) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin child-margins($spacing: $valenski-base-unit) {
+  > * + * {
+    margin-top: $spacing;
+  }
+}
+
+@mixin margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}

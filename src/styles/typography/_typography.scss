@@ -1,0 +1,87 @@
+@use "../base/colors";
+@use "../base/mixins";
+@use "../base/breakpoints";
+
+$header-font: "DM Sans Variable", "Helvetica Neue", sans-serif;
+$body-font: "IBM Plex Sans Variable", "Helvetica Neue", sans-serif;
+
+html,
+body {
+  font-size: 10px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+a {
+  font-family: $body-font;
+  font-size: 1.6rem;
+  line-height: 1.5;
+
+  @include mixins.respond-from(breakpoints.$screen-md) {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+}
+
+h1 {
+  font-size: 3.4rem;
+  line-height: 1.1;
+  font-weight: 500;
+  color: colors.$dark-green;
+
+  @include mixins.respond-from(breakpoints.$screen-md) {
+    font-size: 4.4rem;
+    line-height: 1.07;
+  }
+}
+
+h2 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  font-weight: 400;
+  color: colors.$dark-green;
+
+  @include mixins.respond-from(breakpoints.$screen-md) {
+    font-size: 4rem;
+    line-height: 1.07;
+  }
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.1;
+  font-weight: 300;
+
+  @include mixins.respond-from(breakpoints.$screen-md) {
+    font-size: 3.2rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.lead {
+  font-family: $header-font;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  font-weight: 300;
+
+  @include mixins.respond-from(breakpoints.$screen-md) {
+    font-size: 1.8rem;
+  }
+}

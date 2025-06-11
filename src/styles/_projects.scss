@@ -1,0 +1,71 @@
+@use "base/breakpoints";
+@use "base/colors";
+@use "base/mixins";
+@use "base/values";
+
+.item-grid {
+  @include mixins.wh(100%, auto);
+  max-width: values.$max-width;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: values.$spacing;
+  margin: values.$spacing 0 0;
+
+  @include mixins.respond-until(breakpoints.$screen-xs) {
+    grid-gap: #{0.75 * values.$spacing};
+  }
+
+  @include mixins.respond-until(breakpoints.$screen-sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @include mixins.respond-between(
+    breakpoints.$screen-sm,
+    breakpoints.$screen-md
+  ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item-teaser {
+    @include mixins.wh(100%, auto);
+    max-width: 400px;
+
+    &__image {
+      @include mixins.wh(100%, 240px);
+      object-fit: cover;
+
+      /* When using Nuxt Image */
+      img {
+        @include mixins.wh(100%, 240px);
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      padding: #{0.5 * values.$spacing} 0 0;
+
+      @include mixins.respond-until(breakpoints.$screen-xs) {
+        padding: #{0.25 * values.$spacing} 0 0;
+      }
+    }
+
+    &__title {
+      margin-bottom: #{0.5 * values.$spacing};
+
+      @include mixins.respond-until(breakpoints.$screen-xs) {
+        margin-bottom: #{0.25 * values.$spacing};
+      }
+    }
+
+    &__description {
+      margin-bottom: #{0.5 * values.$spacing};
+    }
+
+    &__link {
+      background: rgba(colors.$dark-green, 1);
+      padding: 4px 10px;
+      border: none;
+      font-weight: 900;
+    }
+  }
+}

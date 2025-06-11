@@ -1,0 +1,47 @@
+@use "base/breakpoints";
+@use "base/colors";
+@use "base/mixins";
+@use "base/values";
+
+.page {
+  @include mixins.wh(100%, auto);
+  max-width: calc(values.$max-width + 2 * values.$spacing);
+  padding: values.$spacing;
+  margin: 0 auto;
+
+  @include mixins.respond-until(breakpoints.$screen-sm) {
+    padding: #{0.5 * values.$spacing};
+  }
+
+  &__header {
+    @include mixins.wh(100%, auto);
+
+    .title {
+      margin-bottom: #{0.5 * values.$spacing};
+    }
+
+    .lead {
+      margin-bottom: #{0.5 * values.$spacing};
+      max-width: 600px;
+    }
+  }
+
+  .section {
+    &__header {
+      margin-bottom: #{0.5 * values.$spacing};
+    }
+
+    &__text .link {
+      text-decoration: underline;
+      color: colors.$dark-green;
+    }
+  }
+
+  .hr {
+    @include mixins.wh(100%, 1px);
+    max-width: values.$max-width;
+    border: none;
+    background: rgba(colors.$dark-green, 0.5);
+    margin: values.$spacing 0;
+  }
+}
