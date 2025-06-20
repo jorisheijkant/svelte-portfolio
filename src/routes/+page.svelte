@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { LandingData } from '$lib/types';
   import ItemGrid from '$lib/ItemGrid.svelte';
+  import { MetaTags } from 'svelte-meta-tags';
 
   type PageData = {
     landingData: LandingData;
@@ -60,4 +61,24 @@
   <hr class="hr" />
   
   <p class="copyright-notice">© Joris Heijkant, 2025</p>
+
+  <MetaTags
+    title={landing.content.title}
+    description={landing.content.lead}
+    canonical="https://www.jorisheijkant.nl/"
+    openGraph={{
+      url: 'https://www.jorisheijkant.nl/',
+      title: landing.content.title,
+      description: landing.content.lead,
+      images: [
+        {
+          url: 'https://www.jorisheijkant.nl/thumbnail.jpg',
+          width: 1400,
+          height: 700,
+          alt: 'Banner website Joris Heijkant'
+        }
+      ],
+      siteName: 'Joris Heijkant'
+    }}
+  />
 </div>

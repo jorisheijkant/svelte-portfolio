@@ -1841,6 +1841,11 @@ sass-embedded@^1.89.2:
     sass-embedded-win32-arm64 "1.89.2"
     sass-embedded-win32-x64 "1.89.2"
 
+schema-dts@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-1.1.5.tgz#9237725d305bac3469f02b292a035107595dc324"
+  integrity sha512-RJr9EaCmsLzBX2NDiO5Z3ux2BVosNZN5jo0gWgsyKvxKIUL5R3swNvoorulAeL9kLB0iTSX7V6aokhla2m7xbg==
+
 semver@^7.6.0, semver@^7.6.3:
   version "7.7.2"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.2.tgz#67d99fdcd35cec21e6f8b87a7fd515a33f982b58"
@@ -1918,6 +1923,13 @@ svelte-eslint-parser@^1.2.0:
     postcss "^8.4.49"
     postcss-scss "^4.0.9"
     postcss-selector-parser "^7.0.0"
+
+svelte-meta-tags@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/svelte-meta-tags/-/svelte-meta-tags-4.4.0.tgz#07e9131c6adacc59bdc673614fa50fa1a1220ecf"
+  integrity sha512-0g7sksBXdCGYcNM44uipqhVwDrtImB73iZdcpWHE0q0+k96Zg0WS6ySPAV+gX34DSqrkrvcqkG/tI2lwN1KbbA==
+  dependencies:
+    schema-dts "^1.1.5"
 
 svelte@^5.0.0:
   version "5.33.19"
